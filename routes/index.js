@@ -5,5 +5,11 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+router.get('/newSong', function(req, res, next) {
+  res.render('addSong', { title: 'Add a Song' });
+});
+router.get('/editSong', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
 
 module.exports = router;

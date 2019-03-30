@@ -12,7 +12,7 @@ exports.create = function(req, res) {
 
   song.save(function(err) {
     if (err) {
-      return next(err);
+      return err;
     }
     res.send("Song Created!");
   });

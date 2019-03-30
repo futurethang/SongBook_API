@@ -1,12 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  ul
-    each val in songs
-      li 
-        h4= val.title
-        p tuning: #{val.tuning}  
-        p rating: #{val.rating}  
+  h2= title
+  a(href="#" style=style) Order by Artist
+  a(href="#" style=style) Order by Title
+  a(href="#" style=style) Order by Confidence
+  
+  each val in songs
+    
+    div.song 
+      h3= val.title
+      span.details(style=style) 
         a(href=val.link) Link to chords
+      span.details(style=style) tuning: #{val.tuning}  
+      span.details(style=style) confidence rating: #{val.rating}  
+      a.actions(href=`/editSong/${val.id}` style=style) edit
+      button(type='button' value="Read More" class="delete" data-id=val.id) delete

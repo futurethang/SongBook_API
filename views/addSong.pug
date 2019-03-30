@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h2 Add a Song
+  form(action="/songs/create" method="post")
+    input(type="text" class="formInput" name="title" placeholder="song title" style=formStyle required)
+    br
+    input(type="text" class="formInput" name="artist" placeholder="song artist" style=formStyle required)
+    br
+    input(type="text" class="formInput" name="tuning" placeholder="song tuning" style=formStyle)
+    br
+    input(type="text" class="formInput" name="rating" placeholder="song confidence rating" style=formStyle required)
+    br
+    input(type="text" class="formInput" name="link" placeholder="song link" style=formStyle required)
+    br
+    input(type="submit" style=formStyle)
