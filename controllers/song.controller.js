@@ -21,7 +21,8 @@ exports.create = function(req, res) {
 exports.song_list = function(req, res) {
   Song.find(req.params.id, function(err, songs) {
     if (err) return next(err);
-    res.send(songs);
+    res.render('songs', { title: "All Songs", songs: songs });
+    // res.send(songs);
   });
 };
 

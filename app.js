@@ -1,3 +1,5 @@
+// built with help from https://codeburst.io/writing-a-crud-app-with-node-js-and-mongodb-e0827cbbdafb
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -5,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const pug = require('pug');
 require('dotenv').config()
 
 // db setup
@@ -26,7 +29,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
